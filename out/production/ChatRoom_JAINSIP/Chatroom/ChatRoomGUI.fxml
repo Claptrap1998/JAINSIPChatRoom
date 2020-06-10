@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<GridPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Chatroom.ChatController">
+  <columnConstraints>
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="328.0" minWidth="10.0" prefWidth="85" />
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="712.7999923706055" minWidth="10.0" prefWidth="313" />
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="694.0000305175781" minWidth="10.0" prefWidth="602" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints maxHeight="127.4" minHeight="0.0" prefHeight="85.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="468.8" minHeight="10.0" prefHeight="423.19999999999993" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="312.4" minHeight="10.0" prefHeight="181.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="252.0" minHeight="10.0" prefHeight="62.60000000000002" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <Rectangle fill="#282A2E" height="750.0" stroke="TRANSPARENT" strokeType="INSIDE" width="85.0" GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" GridPane.rowSpan="3" GridPane.valignment="TOP" GridPane.vgrow="ALWAYS" />
+      <Rectangle fill="#E1E1E3" height="750.0" stroke="TRANSPARENT" strokeType="INSIDE" width="313.0" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" GridPane.rowSpan="3" GridPane.valignment="TOP" GridPane.vgrow="ALWAYS" />
+      <TextArea fx:id="msgToDisplay" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+      <Rectangle fill="WHITE" height="62.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="602.0" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+      <TextArea fx:id="msgToSend" prefHeight="182.0" prefWidth="602.0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+      <Button fx:id="sendButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="43.0" prefWidth="78.0" style="-fx-background-radius: 20; -fx-background-color: #dadada;" text="发   送" textAlignment="CENTER" textFill="#363636ed" GridPane.columnIndex="2" GridPane.rowIndex="3">
+         <GridPane.margin>
+            <Insets left="485.0" />
+         </GridPane.margin>
+         <opaqueInsets>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </opaqueInsets>
+         <padding>
+            <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+         </padding>
+      </Button>
+      <ImageView fx:id="logoImg" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+         <GridPane.margin>
+            <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+         </GridPane.margin>
+         <image>
+            <Image url="@../pic/logo.png" />
+         </image>
+      </ImageView>
+      <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2">
+         <children>
+            <Label fx:id="peerName" graphicTextGap="5.0" text="群聊" textFill="#262525">
+               <font>
+                  <Font name="Microsoft YaHei Bold" size="19.0" />
+               </font>
+               <padding>
+                  <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+               </padding>
+               <HBox.margin>
+                  <Insets right="380.0" />
+               </HBox.margin>
+            </Label>
+            <Button fx:id="minButton" mnemonicParsing="false" style="-fx-background-color: TRANSPARENT;">
+               <HBox.margin>
+                  <Insets right="20.0" top="30.0" />
+               </HBox.margin>
+            </Button>
+            <Button fx:id="closeButton" mnemonicParsing="false" style="-fx-background-color: TRANSPARENT;">
+               <HBox.margin>
+                  <Insets top="30.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
+      <Label alignment="CENTER" prefHeight="88.0" prefWidth="313.0" text="ChatRoom" textAlignment="CENTER" GridPane.columnIndex="1">
+         <font>
+            <Font name="Kristen ITC" size="30.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.4028703570365906" green="0.5327151417732239" blue="0.6026315689086914" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.5131705531736902">
+                     <color>
+                        <Color red="0.7112636566162109" green="0.7289473414421082" blue="0.5521101355552673" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.2028021514415741" green="0.4721393883228302" blue="0.5394737124443054" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+      <SplitPane dividerPositions="0.5" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+        <items>
+          <AnchorPane maxHeight="30.0" minHeight="0.0" minWidth="0.0" prefHeight="30.0" prefWidth="311.0">
+               <children>
+                  <Label prefHeight="32.0" prefWidth="310.0" text="本人状态：在线" textAlignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.8000000000000114" AnchorPane.topAnchor="0.0" />
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="116.0" prefWidth="311.0">
+               <children>
+                  <TextArea fx:id="data1" editable="false" prefHeight="388.0" prefWidth="602.0" />
+               </children></AnchorPane>
+        </items>
+      </SplitPane>
+      <TextArea fx:id="nameToSend" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+   </children>
+</GridPane>
