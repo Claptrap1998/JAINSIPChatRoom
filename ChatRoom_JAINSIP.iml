@@ -10,7 +10,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../7.6Jain-Sip聊天室/JainSip_Client3/lib/JainSipApi1.2.jar!/" />
+          <root url="jar://E:/7.6Jain-Sip聊天室/JainSip_Client3/lib/JainSipApi1.2.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -19,7 +19,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../7.6Jain-Sip聊天室/JainSip_Client3/lib/log4j-1.2.8.jar!/" />
+          <root url="jar://E:/7.6Jain-Sip聊天室/JainSip_Client3/lib/log4j-1.2.8.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -28,7 +28,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../7.6Jain-Sip聊天室/JainSip_Client3/lib/nist-sdp-1.0.jar!/" />
+          <root url="jar://E:/7.6Jain-Sip聊天室/JainSip_Client3/lib/nist-sdp-1.0.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -37,7 +37,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../7.6Jain-Sip聊天室/JainSip_Client3/lib/sip-sdp.jar!/" />
+          <root url="jar://E:/7.6Jain-Sip聊天室/JainSip_Client3/lib/sip-sdp.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -46,7 +46,52 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../7.6Jain-Sip聊天室/JainSip_Client3/lib/concurrent.jar!/" />
+          <root url="jar://E:/7.6Jain-Sip聊天室/JainSip_Client3/lib/concurrent.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/Desktop/7.6Jain-Sip聊天室/JainSip_Client3/lib/concurrent.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/Desktop/7.6Jain-Sip聊天室/JainSip_Client3/lib/JainSipApi1.2.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/Desktop/7.6Jain-Sip聊天室/JainSip_Client3/lib/log4j-1.2.8.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/Desktop/7.6Jain-Sip聊天室/JainSip_Client3/lib/nist-sdp-1.0.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/Desktop/7.6Jain-Sip聊天室/JainSip_Client3/lib/sip-sdp.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />

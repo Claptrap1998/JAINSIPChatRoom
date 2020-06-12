@@ -2,10 +2,11 @@ package Chatroom;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.layout.VBox;
 
 public class ChatController {
     @FXML
-    TextArea msgToDisplay;
+    VBox msgToDisplay;
     @FXML
     TextArea msgToSend;
     @FXML
@@ -26,6 +27,8 @@ public class ChatController {
     Button addBtn;
     @FXML
     TextArea friendShow;
+    @FXML
+    ScrollPane scroll;
 
 
 }

@@ -1,6 +1,7 @@
 package Chatroom;
 
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
@@ -28,6 +29,10 @@ public class ChatRoom extends Application implements MessageProcessor {
     static FXMLLoader fxmlLoader;
     static GridPane root;
     static ChatController controller;
+
+
+    String[] imageArray = {"##blackman", "##233","##bupt"};
+
 
     static List<String> friendList;
     String userlist_show;
@@ -100,7 +105,39 @@ public class ChatRoom extends Application implements MessageProcessor {
 
     public void printMessage(String text)//根据传入的颜色及文字，将文字插入文本域
     {
-        controller.msgToDisplay.appendText(text);
+        //controller.msgToDisplay.appendText(text);
+        Platform.runLater(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    controller.msgToDisplay.getChildren().addAll(new javafx.scene.control.Label(text));
+                } catch (Throwable a) {
+                    a.printStackTrace();
+                }
+            }
+        });
+
+    }
+
+    public void printImage(String text,String imagename)//根据传入的颜色及文字，将文字插入文本域
+    {
+        //controller.msgToDisplay.appendText(text);
+        Platform.runLater(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    controller.msgToDisplay.getChildren().addAll(new javafx.scene.control.Label(text));
+                    Image image = new Image("pic\\"+imagename+".jpg");
+                    ImageView imageView = new ImageView();
+                    imageView.setImage(image);
+                    controller.msgToDisplay.getChildren().addAll(imageView);
+                    controller.msgToDisplay.getChildren().addAll(new javafx.scene.control.Label("\n"));
+                } catch (Throwable a) {
+                    a.printStackTrace();
+                }
+            }
+        });
+
     }
 
     public void printUserList(String text)//根据传入的颜色及文字，将文字插入文本域
@@ -202,17 +239,31 @@ public class ChatRoom extends Application implements MessageProcessor {
     @Override
     public void processInfo(String infoMessage) {
         // TODO Auto-generated method stub
-
+        List<String> imageList= Arrays.asList(imageArray);
+        boolean isimage =imageList.contains(controller.msgToSend.getText());
         //发送信息
         if (infoMessage.equals("WHISPER")) {
             SimpleDateFormat df = new SimpleDateFormat("MM-dd HH:mm:ss");//设置日期格式
-            printMessage(df.format(new Date()));
-            printMessage("\n发给" + controller.nameToSend.getSelectionModel().getSelectedItem().toString() + "的信息: \n" + controller.msgToSend.getText() + "\n\n");
+            if(isimage){
+                System.out.println("表情包");
+                printImage(df.format(new Date())+"\n发给" + controller.nameToSend.getSelectionModel().getSelectedItem().toString() + "的信息: \n",controller.msgToSend.getText());
+            }
+            else{
+                printMessage(df.format(new Date())+"\n发给" + controller.nameToSend.getSelectionModel().getSelectedItem().toString() + "的信息: \n" + controller.msgToSend.getText() + "\n");
+            }
+
             controller.msgToSend.setText("");
         } else if (infoMessage.equals("GROUP")) {
             SimpleDateFormat df = new SimpleDateFormat("MM-dd HH:mm:ss");//设置日期格式
-            printMessage(df.format(new Date()));
-            printMessage("\n发给所有人的信息: \n" + controller.msgToSend.getText() + "\n\n");
+            if(isimage){
+                System.out.println("表情包");
+                printImage(df.format(new Date())+"\n发给" + controller.nameToSend.getSelectionModel().getSelectedItem().toString() + "的信息: \n",controller.msgToSend.getText());
+                printMessage("\n");
+            }
+            else{
+                printMessage(df.format(new Date())+"\n发给" + controller.nameToSend.getSelectionModel().getSelectedItem().toString() + "的信息:\n"+ controller.msgToSend.getText() + "\n\n");
+            }
+
             controller.msgToSend.setText("");
         } else {
             System.out.println("处理用户信息");
@@ -224,19 +275,34 @@ public class ChatRoom extends Application implements MessageProcessor {
     @Override
     public void processWhisperMessage(String sender, String message) {
         // TODO Auto-generated method stub
+        List<String> imageList= Arrays.asList(imageArray);
+        boolean isimage =imageList.contains(message);
         System.out.println("处理私聊-信息");
         SimpleDateFormat df = new SimpleDateFormat("MM-dd HH:mm:ss");//设置日期格式
-        printMessage(df.format(new Date()));
-        printMessage("\n来自" + sender + "的私聊信息:\n" + message + "\n\n");
+        if(isimage){
+            System.out.println("表情包");
+            printImage(df.format(new Date())+"\n来自" + sender + "的私聊信息: \n",message);
+        }
+        else{
+            printMessage(df.format(new Date())+"\n来自" + sender + "的私聊信息:\n" + message + "\n\n");
+        }
     }
 
     @Override
     public void processGroupMessage(String sender, String message) {
         // TODO Auto-generated method stub
+        // TODO Auto-generated method stub
+        List<String> imageList= Arrays.asList(imageArray);
+        boolean isimage =imageList.contains(message);
         System.out.println("处理群聊-信息");
         SimpleDateFormat df = new SimpleDateFormat("MM-dd HH:mm:ss");//设置日期格式
-        printMessage(df.format(new Date()));
-        printMessage("\n来自" + sender + "的群聊信息:\n" + message + "\n\n");
+        if(isimage){
+            System.out.println("表情包");
+            printImage(df.format(new Date())+"\n来自" + sender + "的群聊信息: \n",message);
+        }
+        else{
+            printMessage(df.format(new Date())+"\n来自" + sender + "的群聊信息:\n" + message + "\n\n");
+        }
     }
 
 }
