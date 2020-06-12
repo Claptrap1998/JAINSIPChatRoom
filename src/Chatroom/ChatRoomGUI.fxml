@@ -47,7 +47,7 @@
       </ImageView>
       <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2">
          <children>
-            <Label fx:id="peerName" graphicTextGap="5.0" text="群聊" textFill="#262525">
+            <Label fx:id="peerName" graphicTextGap="5.0" text="聊天区" textFill="#262525">
                <font>
                   <Font name="Microsoft YaHei Bold" size="19.0" />
                </font>
@@ -100,12 +100,15 @@
         <items>
           <AnchorPane maxHeight="30.0" minHeight="0.0" minWidth="0.0" prefHeight="30.0" prefWidth="311.0">
                <children>
-                  <Label prefHeight="32.0" prefWidth="310.0" text="本人状态：在线" textAlignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.8000000000000114" AnchorPane.topAnchor="0.0" />
+                  <Label prefHeight="32.0" prefWidth="310.0" text="在线列表" textAlignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.8000000000000114" AnchorPane.topAnchor="0.0">
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding></Label>
                </children>
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="116.0" prefWidth="311.0">
                <children>
-                  <TextArea fx:id="data1" editable="false" prefHeight="388.0" prefWidth="602.0" />
+                  <TextArea fx:id="data1" editable="false" prefHeight="388.0" prefWidth="310.0" />
                </children></AnchorPane>
         </items>
       </SplitPane>
