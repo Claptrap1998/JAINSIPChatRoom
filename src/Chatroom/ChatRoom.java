@@ -4,14 +4,12 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
-import javafx.scene.control.Separator;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
-import java.awt.Color;
 import java.io.*;
 import java.net.InetAddress;
 import java.text.SimpleDateFormat;
@@ -37,7 +35,6 @@ public class ChatRoom extends Application implements MessageProcessor {
     @Override
     public void start(Stage primaryStage) throws Exception {
         Scene scene = new Scene(root);
-//        System.out.println("start method");
 
         controller.nameToSend.getItems().add("所有人");
         controller.nameToSend.setValue("所有人");
@@ -124,11 +121,9 @@ public class ChatRoom extends Application implements MessageProcessor {
 
         controller.addBtn.setOnAction(event -> {
             String friend_toAdd = controller.addInput.getText();
-//            System.out.println(userlist_show);
             String[] arr = userlist_show.split("\n");
             if (Arrays.asList(arr).contains(friend_toAdd) && !friendList.contains(friend_toAdd) && !friend_toAdd.equals(username)) {
                 friendList.add(friend_toAdd);
-//                System.out.println(friend_toAdd);
             } else {
                 Alert _alert = new Alert(Alert.AlertType.INFORMATION);
                 _alert.setTitle("信息");

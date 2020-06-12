@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="ChatRoom_JAINSIP:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/ChatRoom_JAINSIP_jar</output-path>
+    <root id="archive" name="ChatRoom_JAINSIP.jar">
+      <element id="module-output" name="ChatRoom_JAINSIP" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../../7.6Jain-Sip聊天室/JainSip_Client3/lib/JainSipApi1.2.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../../7.6Jain-Sip聊天室/JainSip_Client3/lib/nist-sdp-1.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../../7.6Jain-Sip聊天室/JainSip_Client3/lib/log4j-1.2.8.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../../7.6Jain-Sip聊天室/JainSip_Client3/lib/sip-sdp.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../../7.6Jain-Sip聊天室/JainSip_Client3/lib/concurrent.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>
