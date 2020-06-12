@@ -25,28 +25,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cdaaf770-e35d-45c7-8c9a-58d949f172a4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/ChatRoom_JAINSIP/Chatroom/ChatRoom$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/ChatRoom_JAINSIP/Chatroom/ChatRoom$2.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/ChatRoom_JAINSIP/pic/##233.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/ChatRoom_JAINSIP/pic/##blackman.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/ChatRoom_JAINSIP/pic/##bupt.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pic/##233.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pic/##blackman.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pic/##bupt.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatRoom_JAINSIP.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ChatRoom_JAINSIP.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ServerLog.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ServerLog.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ChatRoom_JAINSIP/Chatroom/ChatController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChatRoom_JAINSIP/Chatroom/ChatController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ChatRoom_JAINSIP/Chatroom/ChatRoom.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChatRoom_JAINSIP/Chatroom/ChatRoom.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ChatRoom_JAINSIP/Chatroom/ChatRoomGUI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChatRoom_JAINSIP/Chatroom/ChatRoomGUI.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ChatRoom_JAINSIP/Chatroom/SipLayer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChatRoom_JAINSIP/Chatroom/SipLayer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Chatroom/ChatController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Chatroom/ChatController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Chatroom/ChatRoom.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Chatroom/ChatRoom.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Chatroom/ChatRoomGUI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Chatroom/ChatRoomGUI.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Chatroom/SipLayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Chatroom/SipLayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/textclient.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/textclientdebug.log" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -311,30 +292,34 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="498" y="201" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1536.824@0.0.1536.824" timestamp="1591971489039" />
+    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1591977104942">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1591977104942" />
     <state x="591" y="162" key="FileChooserDialogImpl" timestamp="1591883118022">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="591" y="162" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1591883118022" />
-    <state width="1493" height="187" key="GridCell.Tab.0.bottom" timestamp="1591976692495">
+    <state width="1493" height="187" key="GridCell.Tab.0.bottom" timestamp="1591978594025">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="187" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1591976692495" />
-    <state width="1493" height="187" key="GridCell.Tab.0.center" timestamp="1591976692494">
+    <state width="1493" height="187" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1591978594025" />
+    <state width="1493" height="187" key="GridCell.Tab.0.center" timestamp="1591978594025">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="187" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1591976692494" />
-    <state width="1493" height="187" key="GridCell.Tab.0.left" timestamp="1591976692494">
+    <state width="1493" height="187" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1591978594025" />
+    <state width="1493" height="187" key="GridCell.Tab.0.left" timestamp="1591978594025">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="187" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1591976692494" />
-    <state width="1493" height="187" key="GridCell.Tab.0.right" timestamp="1591976692494">
+    <state width="1493" height="187" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1591978594025" />
+    <state width="1493" height="187" key="GridCell.Tab.0.right" timestamp="1591978594025">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="187" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1591976692494" />
-    <state x="485" y="114" key="RollbackChangesDialog" timestamp="1591976226868">
+    <state width="1493" height="187" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1591978594025" />
+    <state x="485" y="114" key="RollbackChangesDialog" timestamp="1591978561098">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="485" y="114" key="RollbackChangesDialog/0.0.1536.824@0.0.1536.824" timestamp="1591976226868" />
+    <state x="485" y="114" key="RollbackChangesDialog/0.0.1536.824@0.0.1536.824" timestamp="1591978561098" />
     <state x="469" y="93" width="813" height="618" key="SettingsEditor" timestamp="1591971586292">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
