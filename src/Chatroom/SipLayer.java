@@ -71,16 +71,16 @@ public class SipLayer implements SipListener {
 		sipFactory = SipFactory.getInstance();
 		sipFactory.setPathName("gov.nist");
 		Properties properties = new Properties();
-		properties.setProperty("javax.sip.STACK_NAME", "TextClient");
+		properties.setProperty("javax.sip.STACK_NAME", "TextClientStack");
 		properties.setProperty("javax.sip.IP_ADDRESS", ip);
 
 		// DEBUGGING: Information will go to files
-		// textclient.log and textclientdebug.log
-		properties.setProperty("gov.nist.javax.sip.TRACE_LEVEL", "32");
+
+		properties.setProperty("gov.nist.javax.sip.TRACE_LEVEL", "36");
 		properties.setProperty("gov.nist.javax.sip.SERVER_LOG",
-				"textclient.txt");
+				"ServerLog.txt");
 		properties.setProperty("gov.nist.javax.sip.DEBUG_LOG",
-				"textclientdebug.log");
+				"DebugLog.log");
 
 		sipStack = sipFactory.createSipStack(properties);
 		headerFactory = sipFactory.createHeaderFactory();
