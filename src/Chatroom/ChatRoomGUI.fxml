@@ -23,7 +23,15 @@
    <children>
       <Rectangle fill="#282A2E" height="750.0" stroke="TRANSPARENT" strokeType="INSIDE" width="85.0" GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" GridPane.rowSpan="3" GridPane.valignment="TOP" GridPane.vgrow="ALWAYS" />
       <Rectangle fill="#E1E1E3" height="750.0" stroke="TRANSPARENT" strokeType="INSIDE" width="313.0" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" GridPane.rowSpan="3" GridPane.valignment="TOP" GridPane.vgrow="ALWAYS" />
-      <TextArea fx:id="msgToDisplay" editable="false" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+      <ScrollPane prefHeight="378.0" prefWidth="602.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="528.0" prefWidth="601.0">
+               <children>
+                  <VBox fx:id="msgToDisplay" prefHeight="529.0" prefWidth="584.0" />
+               </children>
+            </AnchorPane>
+        </content>
+      </ScrollPane>
       <Rectangle fill="WHITE" height="62.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="602.0" GridPane.columnIndex="2" GridPane.rowIndex="3" />
       <TextArea fx:id="msgToSend" prefHeight="182.0" prefWidth="602.0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
       <ImageView fx:id="logoImg" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
