@@ -23,20 +23,9 @@
    <children>
       <Rectangle fill="#282A2E" height="750.0" stroke="TRANSPARENT" strokeType="INSIDE" width="85.0" GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" GridPane.rowSpan="3" GridPane.valignment="TOP" GridPane.vgrow="ALWAYS" />
       <Rectangle fill="#E1E1E3" height="750.0" stroke="TRANSPARENT" strokeType="INSIDE" width="313.0" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" GridPane.rowSpan="3" GridPane.valignment="TOP" GridPane.vgrow="ALWAYS" />
-      <TextArea fx:id="msgToDisplay" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+      <TextArea fx:id="msgToDisplay" editable="false" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
       <Rectangle fill="WHITE" height="62.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="602.0" GridPane.columnIndex="2" GridPane.rowIndex="3" />
       <TextArea fx:id="msgToSend" prefHeight="182.0" prefWidth="602.0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-      <Button fx:id="sendButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="43.0" prefWidth="78.0" style="-fx-background-radius: 20; -fx-background-color: #dadada;" text="发   送" textAlignment="CENTER" textFill="#363636ed" GridPane.columnIndex="2" GridPane.rowIndex="3">
-         <GridPane.margin>
-            <Insets left="485.0" />
-         </GridPane.margin>
-         <opaqueInsets>
-            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-         </opaqueInsets>
-         <padding>
-            <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
-         </padding>
-      </Button>
       <ImageView fx:id="logoImg" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
          <GridPane.margin>
             <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
@@ -96,22 +85,77 @@
             </LinearGradient>
          </textFill>
       </Label>
-      <SplitPane dividerPositions="0.5" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+      <SplitPane dividerPositions="0.42816365366317793" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
         <items>
           <AnchorPane maxHeight="30.0" minHeight="0.0" minWidth="0.0" prefHeight="30.0" prefWidth="311.0">
                <children>
-                  <Label prefHeight="32.0" prefWidth="310.0" text="在线列表" textAlignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.8000000000000114" AnchorPane.topAnchor="0.0">
+                  <Label prefHeight="32.0" prefWidth="310.0" text="服务器在线列表" textAlignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.8000000000000114" AnchorPane.topAnchor="0.0">
                      <padding>
                         <Insets left="10.0" />
                      </padding></Label>
                </children>
             </AnchorPane>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="116.0" prefWidth="311.0">
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="165.0" prefWidth="311.0">
                <children>
                   <TextArea fx:id="data1" editable="false" prefHeight="388.0" prefWidth="310.0" />
                </children></AnchorPane>
         </items>
       </SplitPane>
-      <TextArea fx:id="nameToSend" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+      <SplitPane dividerPositions="0.22930648769574943" orientation="VERTICAL" prefHeight="253.0" prefWidth="313.0" GridPane.columnIndex="1" GridPane.rowIndex="2" GridPane.rowSpan="2">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" SplitPane.resizableWithParent="false">
+               <children>
+                  <SplitPane dividerPositions="0.6517509727626459" layoutY="-2.0" prefHeight="62.0" prefWidth="310.0">
+                    <items>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                           <children>
+                              <TextField fx:id="addInput" layoutX="21.0" layoutY="14.0" prefHeight="26.0" prefWidth="156.0" />
+                           </children>
+                        </AnchorPane>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="61.0" prefWidth="91.0" SplitPane.resizableWithParent="false">
+                           <children>
+                              <Button fx:id="addBtn" layoutX="20.0" layoutY="14.0" mnemonicParsing="false" text="添加好友" />
+                           </children></AnchorPane>
+                    </items>
+                  </SplitPane>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="315.0" prefWidth="311.0">
+               <children>
+                  <TitledPane animated="false" prefHeight="207.0" prefWidth="313.0" text="Friend List">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="181.0" prefWidth="287.0">
+                           <children>
+                              <TextArea fx:id="friendShow" editable="false" layoutX="-2.0" layoutY="-4.0" prefHeight="162.0" prefWidth="311.0" />
+                           </children></AnchorPane>
+                    </content>
+                  </TitledPane>
+               </children></AnchorPane>
+        </items>
+      </SplitPane>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+         <children>
+            <Label alignment="CENTER_LEFT" text="选择发送给： " />
+            <ChoiceBox fx:id="nameToSend" prefWidth="150.0">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <HBox.margin>
+                  <Insets right="250.0" />
+               </HBox.margin></ChoiceBox>
+            <Button fx:id="sendButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="43.0" prefWidth="78.0" style="-fx-background-radius: 20; -fx-background-color: #dadada;" text="发   送" textAlignment="CENTER" textFill="#363636ed">
+               <opaqueInsets>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </opaqueInsets>
+               <padding>
+                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+               </padding>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
+      
    </children>
 </GridPane>

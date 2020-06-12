@@ -3,6 +3,8 @@ package Chatroom;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Separator;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
@@ -13,9 +15,7 @@ import java.awt.Color;
 import java.io.*;
 import java.net.InetAddress;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
 
 public class ChatRoom extends Application implements MessageProcessor {
@@ -31,15 +31,26 @@ public class ChatRoom extends Application implements MessageProcessor {
     static GridPane root;
     static ChatController controller;
 
+    static List<String> friendList;
+    String userlist_show;
+
     @Override
     public void start(Stage primaryStage) throws Exception {
         Scene scene = new Scene(root);
-        System.out.println("start method");
+//        System.out.println("start method");
+
+        controller.nameToSend.getItems().add("所有人");
+        controller.nameToSend.setValue("所有人");
+
         //发送按钮
         controller.sendButton.setOnAction(e -> {
             // TODO add your handling code here:
             try {
-                String dest_name = controller.nameToSend.getText();
+//                String dest_name = controller.nameToSend.getOnShown();
+                String dest_name = "";
+                if (!controller.nameToSend.getSelectionModel().getSelectedItem().toString().equals("所有人")) {
+                    dest_name = controller.nameToSend.getSelectionModel().getSelectedItem().toString();
+                }
                 String message = controller.msgToSend.getText();
 
                 System.out.println(dest_name + message);
@@ -52,6 +63,7 @@ public class ChatRoom extends Application implements MessageProcessor {
             }
         });
 
+//         & !friendList.contains(friend_toAdd)
         //最小化按钮
         Image minImg = new Image("pic/min.png");
         ImageView minButtonView = new ImageView(minImg);
@@ -68,7 +80,7 @@ public class ChatRoom extends Application implements MessageProcessor {
             System.exit(0);
         });
         //显示GUI界面
-        primaryStage.setTitle("ChatRoom");
+        primaryStage.setTitle("ChatRoom: "+username);
 
         //设定窗口无边框
         primaryStage.initStyle(StageStyle.UNDECORATED);
@@ -98,24 +110,50 @@ public class ChatRoom extends Application implements MessageProcessor {
     {
         // 用户列表去重
         String[] userlist = text.split("\n");
-        List<String> list =new ArrayList<String>();
-        for(String user:userlist){
-            if(!list.contains(user))
+        List<String> list = new ArrayList<String>();
+        for (String user : userlist) {
+            if (!list.contains(user))
                 list.add(user);
         }
         String[] userlist_final = list.toArray(new String[list.size()]);
-        String userlist_show = new String();
-        for(String user:userlist_final){
+        userlist_show = new String();
+        for (String user : userlist_final) {
             userlist_show += user + "\n";
         }
-        controller.data1.setText(userlist_show);
+        controller.data1.setText(userlist_show.replace(username,username+"(我)"));
+
+        controller.addBtn.setOnAction(event -> {
+            String friend_toAdd = controller.addInput.getText();
+//            System.out.println(userlist_show);
+            String[] arr = userlist_show.split("\n");
+            if (Arrays.asList(arr).contains(friend_toAdd) && !friendList.contains(friend_toAdd) && !friend_toAdd.equals(username)) {
+                friendList.add(friend_toAdd);
+//                System.out.println(friend_toAdd);
+            } else {
+                Alert _alert = new Alert(Alert.AlertType.INFORMATION);
+                _alert.setTitle("信息");
+                _alert.setHeaderText("出错了！");
+                _alert.setContentText("您输入的用户当前不在线或已经是您的好友了！");
+                _alert.show();
+            }
+            String ss = String.join("\n", friendList);
+            controller.friendShow.setText(ss.replaceAll("所有人\n", ""));
+
+            List<String> choice = friendList;
+            if (!choice.contains("所有人")) {
+                choice.add(0, "所有人");
+            }
+            controller.nameToSend.getItems().setAll(choice);
+            controller.nameToSend.setValue("所有人");
+
+        });
     }
+
 
     public ChatRoom() throws IOException {
         fxmlLoader = new FXMLLoader(ChatRoom.class.getResource("ChatRoomGUI.fxml"));
         root = fxmlLoader.load();
         controller = fxmlLoader.getController();
-        System.out.println("无参构造");
     }
 
     /**
@@ -132,7 +170,7 @@ public class ChatRoom extends Application implements MessageProcessor {
             username = args[0];
             int port = Integer.parseInt(args[1]);
             String ip = InetAddress.getLocalHost().getHostAddress();
-
+            friendList = new ArrayList<String>();
             sipLayer = new SipLayer(username, ip, port);
             ChatRoom jr = new ChatRoom(sipLayer);
             sipLayer.setMessageProcessor(jr);
@@ -150,9 +188,9 @@ public class ChatRoom extends Application implements MessageProcessor {
 
     public ChatRoom(SipLayer sip) throws IOException {
         super();
-        System.out.println("含参构造");
+//        System.out.println("含参构造");
         sipLayer = sip;
-        System.out.println("初始化sipLayer完成");
+//        System.out.println("初始化sipLayer完成");
         fxmlLoader = new FXMLLoader(ChatRoom.class.getResource("ChatRoomGUI.fxml"));
         root = fxmlLoader.load();
         controller = fxmlLoader.getController();
@@ -174,12 +212,12 @@ public class ChatRoom extends Application implements MessageProcessor {
         if (infoMessage.equals("WHISPER")) {
             SimpleDateFormat df = new SimpleDateFormat("MM-dd HH:mm:ss");//设置日期格式
             printMessage(df.format(new Date()));
-            printMessage("\n发给" + controller.nameToSend.getText() + "的信息: \n" + controller.msgToSend.getText() + "\n");
+            printMessage("\n发给" + controller.nameToSend.getSelectionModel().getSelectedItem().toString() + "的信息: \n" + controller.msgToSend.getText() + "\n\n");
             controller.msgToSend.setText("");
         } else if (infoMessage.equals("GROUP")) {
             SimpleDateFormat df = new SimpleDateFormat("MM-dd HH:mm:ss");//设置日期格式
             printMessage(df.format(new Date()));
-            printMessage("\n发给所有人的信息: \n" + controller.msgToSend.getText() + "\n");
+            printMessage("\n发给所有人的信息: \n" + controller.msgToSend.getText() + "\n\n");
             controller.msgToSend.setText("");
         } else {
             System.out.println("处理用户信息");

@@ -1,10 +1,7 @@
 package Chatroom;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.ListView;
-import javafx.scene.control.TextArea;
+import javafx.scene.control.*;
 
 public class ChatController {
     @FXML
@@ -22,9 +19,13 @@ public class ChatController {
     @FXML
     TextArea data1;
     @FXML
-    TextArea nameToSend;
+    ChoiceBox nameToSend;
     @FXML
-    ListView liveList;
+    TextField addInput;
+    @FXML
+    Button addBtn;
+    @FXML
+    TextArea friendShow;
 
 
 }
